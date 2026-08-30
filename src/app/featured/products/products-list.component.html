@@ -1,0 +1,26 @@
+<ActionBar class="action-bar">
+    <!-- Botón para abrir el Side Drawer -->
+    <NavigationButton ios:visibility="collapsed" icon="font://&#xf0c9;" class="fas" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="font://&#xf0c9;" class="fas action-item" ios.position="left" android.position="actionBar" (tap)="onDrawerButtonTap()" visibility="collapsed"></ActionItem>
+
+    <Label class="action-bar-title" text="Productos"></Label>
+</ActionBar>
+
+<GridLayout class="page__content">
+    <StackLayout class="p-20">
+
+        <!-- Mensaje condicional de Android (Requisito 10) -->
+        <Label [text]="platformMessage" class="h2 text-center m-b-15" textWrap="true"></Label>
+
+        <!-- Lista generada con *ngFor (Requisito 7) -->
+        <ListView [items]="products" class="list-group">
+            <ng-template let-item="item">
+                <StackLayout class="list-group-item p-10">
+                    <Label [text]="item.name" class="h3 font-weight-bold"></Label>
+                    <Label [text]="item.description" class="body m-t-5"></Label>
+                </StackLayout>
+            </ng-template>
+        </ListView>
+
+    </StackLayout>
+</GridLayout>
