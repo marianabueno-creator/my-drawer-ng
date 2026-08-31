@@ -47,7 +47,16 @@
           <Label col="0" text="&#xf005;" class="nt-icon fas"></Label>
           <Label col="1" text="Featured" class="p-r-10"></Label>
         </GridLayout>
-
+          
+          <GridLayout
+                  columns="auto, *"
+                  class="nt-drawer__list-item"
+                  [class.-selected]="isComponentSelected('/featured')"
+                  (tap)="onNavItemTap('/featured')"
+          >
+              <Label col="0" text="&#xf005;" class="nt-icon fas"></Label>
+              <Label col="1" text="Products" class="p-r-10"></Label>
+          </GridLayout>
         <StackLayout class="hr"></StackLayout>
 
         <GridLayout
@@ -67,5 +76,4 @@
     <page-router-outlet></page-router-outlet>
   </GridLayout>
 </RadSideDrawer>
-<Label col="0" text="&#xf07a;" class="nt-icon fas"></Label>
-<Label col="1" text="Productos" class="drawer-item-text"></Label>
+
